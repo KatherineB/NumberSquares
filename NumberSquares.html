@@ -11,9 +11,34 @@ html{
   height: 60px;
   margin: 5px;
   float: left;
-  background-color: #00eeff;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #ccccff;
+}
+.pickRandBtn{
+    height: 60px;
+	width: 90px;	
+	color: #fff;
+	background-color: #4b0;
+	font-size: 18px;
+	font-weight: 500;
+    margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 40px;
+	border: 0px solid transparent;
+	border-radius: 15px;
+	white-space: normal;
+	float: left;
 }
 </style>
+<script>
+var ids = new Array(0,0,0,0,0,0,0,0,0,0);
+function genRandNums(){
+   var number = Math.floor(Math.random()*16);
+    document.getElementById("nr01").innerHTML = number;
+}
+</script>
 </head>
 <body>
 <div class="mainDiv">
@@ -28,6 +53,9 @@ html{
 	 <div class="numberRand" id="nr08"></div>
 	 <div class="numberRand" id="nr09"></div>
 	 <div class="numberRand" id="nr10"></div>
+	 <div class="pickRandBox">
+	      <input class="pickRandBtn" type="button" value="New Numbers" OnClick="genRandNums()">
+	 </div>
      <div style="clear:both"></div>
   </div>
 </div>
