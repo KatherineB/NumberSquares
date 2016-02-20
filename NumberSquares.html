@@ -31,19 +31,47 @@ html{
 	white-space: normal;
 	float: left;
 }
+.boxOf16{
+   margin-top: 45px;
+   float: left;
+   margin-left: 20px;
+}
+.rowOf4{
+
+}
+.place{
+   width: 40px;
+  height: 40px;
+  margin: 3px;
+  float: left;
+  font-size: 35px;
+  text-align: center;
+  background-color: #fff; 
+  color: aaa;
+}
 </style>
 <script>
-var ids = new Array(0,0,0,0,0,0,0,0,0,0);
-function genRandNums(){
-   var number = Math.floor(Math.random()*16);
-    document.getElementById("nr01").innerHTML = number;
+var ids = new Array("nr01","nr02","nr03","nr04","nr05","nr06","nr07","nr08","nr09","nr10");
+var numberToTransfer = "";
+function genRandNums(){"nr03"
+    for( var i = 0; i < 10; i++){
+		var number = Math.floor(Math.random()*16);
+		document.getElementById(ids[i]).innerHTML = number;
+    }
+}
+function getNumber(rSquare){
+     numberToTransfer = document.getElementById(rSquare).text;
+	 alert(numberToTransfer);
+}
+function placeNumber(pSquare){
+     document.getElementById(pSquare).innerHTML = numberToTransfer;
 }
 </script>
 </head>
 <body>
 <div class="mainDiv">
-   <div class="numberSelectBox">
-     <div class="numberRand" id="nr01"></div>
+   <div class="numberSelectBoxRow">
+     <div class="numberRand" id="nr01" OnClick="getNumber('nr01')"></div>
 	 <div class="numberRand" id="nr02"></div>
 	 <div class="numberRand" id="nr03"></div>
 	 <div class="numberRand" id="nr04"></div>
@@ -58,6 +86,188 @@ function genRandNums(){
 	 </div>
      <div style="clear:both"></div>
   </div>
+  <div class="boxOf16">
+       <div class="rowOf4">
+	        <div class="place" id="p1_01" OnClick="placeNumber('p1_01')">0</div>
+			<div class="place">1</div>
+			<div class="place">2</div>
+			<div class="place">3</div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">4</div>
+			<div class="place">5</div>
+			<div class="place">6</div>
+			<div class="place">7</div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">8</div>
+			<div class="place">9</div>
+			<div class="place">10</div>
+			<div class="place">11</div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">12</div>
+			<div class="place">13</div>
+			<div class="place">14</div>
+			<div class="place">15</div>
+			<div style="clear:both"></div>
+	   </div>
+  </div>
+  <div class="boxOf16">
+       <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place">?</div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place">?</div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place">?</div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place">?</div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+  </div>
+  <div class="boxOf16">
+       <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+  </div>
+  <div style="clear:both"></div>
+  <div class="boxOf16">
+       <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+  </div>
+  <div class="boxOf16">
+       <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+  </div>
+  <div class="boxOf16">
+       <div class="rowOf4">
+	        <div class="place">?</div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+	   <div class="rowOf4">
+	        <div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div class="place"></div>
+			<div style="clear:both"></div>
+	   </div>
+  </div>
+  <div style="clear:both"></div>
 </div>
 </body>
 </html>
