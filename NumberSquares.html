@@ -52,6 +52,7 @@ html{
 </style>
 <script>
 var ids = new Array("nr01","nr02","nr03","nr04","nr05","nr06","nr07","nr08","nr09","nr10");
+var place2 = new Array("p2_01","p2_02","p2_03","p2_04","p2_05","p2_06","p2_07","p2_08","p2_09","p2_10","p2_11","p2_12","p2_13","p2_14","p2_15","p2_16");
 var numberToTransfer = "";
 var origin = "";
 function genRandNums(){
@@ -74,6 +75,26 @@ function placeNumber(pSquare){
 		 document.getElementById(pSquare).style.backgroundColor = '#0fc';
 		 document.getElementById(origin).innerHTML = "";
 	 }
+}
+function placeNumber2(indexNo){
+	 var pSquare = place2[indexNo];
+     var numberLegal = document.getElementById(pSquare).innerHTML;	   
+	 
+	 if(numberToTransfer === numberLegal){	     
+         document.getElementById(pSquare).innerHTML = numberToTransfer;
+		 document.getElementById(pSquare).style.color = '#000';
+		 document.getElementById(pSquare).style.fontWeight = 'bold';
+		 document.getElementById(pSquare).style.backgroundColor = '#0fc';
+		 document.getElementById(origin).innerHTML = "";
+	 }
+	 else if(numberLegal === "?"){
+	     document.getElementById(pSquare).innerHTML = numberToTransfer;
+		 document.getElementById(pSquare).style.color = '#000';
+		 document.getElementById(pSquare).style.fontWeight = 'bold';
+		 document.getElementById(pSquare).style.backgroundColor = '#0fc';
+		 document.getElementById(origin).innerHTML = "";
+		 document.getElementById(place2[indexNo+1]).innerHTML = numberToTransfer;
+	 }	 
 }
 </script>
 </head>
@@ -127,31 +148,31 @@ function placeNumber(pSquare){
   </div>
   <div class="boxOf16">
        <div class="rowOf4">
-	        <div class="place">?</div>
-			<div class="place"></div>
-			<div class="place">?</div>
-			<div class="place"></div>
+	        <div class="place" id="p2_01" OnClick="placeNumber2(0)">?</div>
+			<div class="place" id="p2_02" OnClick="placeNumber2(1)"></div>
+			<div class="place" id="p2_03" OnClick="placeNumber2(2)">?</div>
+			<div class="place" id="p2_04" OnClick="placeNumber2(3)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place">?</div>
-			<div class="place"></div>
-			<div class="place">?</div>
-			<div class="place"></div>
+	        <div class="place" id="p2_05" OnClick="placeNumber2(4)">?</div>
+			<div class="place" id="p2_06" OnClick="placeNumber2(5)"></div>
+			<div class="place" id="p2_07" OnClick="placeNumber2(6)">?</div>
+			<div class="place" id="p2_08" OnClick="placeNumber2(7)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place">?</div>
-			<div class="place"></div>
-			<div class="place">?</div>
-			<div class="place"></div>
+	        <div class="place" id="p2_09" OnClick="placeNumber2(8)">?</div>
+			<div class="place" id="p2_10" OnClick="placeNumber2(9)"></div>
+			<div class="place" id="p2_11" OnClick="placeNumber2(10)">?</div>
+			<div class="place" id="p2_12" OnClick="placeNumber2(11)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place">?</div>
-			<div class="place"></div>
-			<div class="place">?</div>
-			<div class="place"></div>
+	        <div class="place" id="p2_13" OnClick="placeNumber2(12)">?</div>
+			<div class="place" id="p2_14" OnClick="placeNumber2(13)"></div>
+			<div class="place" id="p2_15" OnClick="placeNumber2(14)">?</div>
+			<div class="place" id="p2_16" OnClick="placeNumber2(15)"></div>
 			<div style="clear:both"></div>
 	   </div>
   </div>
