@@ -55,6 +55,9 @@ var ids = new Array("nr01","nr02","nr03","nr04","nr05","nr06","nr07","nr08","nr0
 var randomNumbers = new Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F");
 var place2 = new Array("p2_01","p2_02","p2_03","p2_04","p2_05","p2_06","p2_07","p2_08","p2_09","p2_10","p2_11","p2_12","p2_13","p2_14","p2_15","p2_16");
 var place3 = new Array("p3_01","p3_02","p3_03","p3_04","p3_05","p3_06","p3_07","p3_08","p3_09","p3_10","p3_11","p3_12","p3_13","p3_14","p3_15","p3_16");
+var place4 = new Array("p4_01","p4_02","p4_03","p4_04","p4_05","p4_06","p4_07","p4_08","p4_09","p4_10","p4_11","p4_12","p4_13","p4_14","p4_15","p4_16");
+var place5 = new Array("p5_01","p5_02","p5_03","p5_04","p5_05","p5_06","p5_07","p5_08","p5_09","p5_10","p5_11","p5_12","p5_13","p5_14","p5_15","p5_16");
+var place6 = new Array("p6_01","p6_02","p6_03","p6_04","p6_05","p6_06","p6_07","p6_08","p6_09","p6_10","p6_11","p6_12","p6_13","p6_14","p6_15","p6_16");
 var numberToTransfer = "";
 var origin = "";
 function genRandNums(){
@@ -67,6 +70,7 @@ function genRandNums(){
 function getNumber(rSquare){
      origin = rSquare;
      numberToTransfer = document.getElementById(rSquare).innerHTML;
+	 
 }
 function placeNumber(pSquare){
      var numberLegal = document.getElementById(pSquare).innerHTML;	 
@@ -125,21 +129,107 @@ function placeNumber3(indexNo){
 		 document.getElementById(place3[indexNo+3]).innerHTML = numberToTransfer;
 	 }	 
 }
+function placeNumber4(indexNo){
+	 var pSquare = place4[indexNo];
+     var numberLegal = document.getElementById(pSquare).innerHTML;	   
+	 var squareState = document.getElementById(pSquare).style.fontWeight;
+	// alert(squareState);
+	 if(numberToTransfer === numberLegal && squareState !== "bold"){	     
+         document.getElementById(pSquare).innerHTML = numberToTransfer;
+		 document.getElementById(pSquare).style.color = '#000';
+		 document.getElementById(pSquare).style.fontWeight = 'bold';
+		 document.getElementById(pSquare).style.backgroundColor = '#0fc';
+		 document.getElementById(origin).innerHTML = "";
+	 }
+	 else if(numberLegal === "?"){
+	     document.getElementById(pSquare).innerHTML = numberToTransfer;
+		 document.getElementById(pSquare).style.color = '#000';
+		 document.getElementById(pSquare).style.fontWeight = 'bold';
+		 document.getElementById(pSquare).style.backgroundColor = '#0fc';
+		 document.getElementById(origin).innerHTML = "";
+		 document.getElementById(place4[indexNo+1]).innerHTML = numberToTransfer;
+		 document.getElementById(place4[indexNo+2]).innerHTML = numberToTransfer;
+		 document.getElementById(place4[indexNo+3]).innerHTML = numberToTransfer;
+	 }	 
+}
+function placeNumber5(indexNo){
+	 var pSquare = place5[indexNo];
+     var numberLegal = document.getElementById(pSquare).innerHTML;	   
+	 var squareState = document.getElementById(pSquare).style.fontWeight;
+	// alert(squareState);
+	 if(numberToTransfer === numberLegal && squareState !== "bold"){	     
+         document.getElementById(pSquare).innerHTML = numberToTransfer;
+		 document.getElementById(pSquare).style.color = '#000';
+		 document.getElementById(pSquare).style.fontWeight = 'bold';
+		 document.getElementById(pSquare).style.backgroundColor = '#0fc';
+		 document.getElementById(origin).innerHTML = "";
+	 }
+	 else if(numberLegal === "?"){
+	     document.getElementById(pSquare).innerHTML = numberToTransfer;
+		 document.getElementById(pSquare).style.color = '#000';
+		 document.getElementById(pSquare).style.fontWeight = 'bold';
+		 document.getElementById(pSquare).style.backgroundColor = '#0fc';
+		 document.getElementById(origin).innerHTML = "";
+		 document.getElementById(place5[indexNo+1]).innerHTML = numberToTransfer;
+		 document.getElementById(place5[indexNo+2]).innerHTML = numberToTransfer;
+		 document.getElementById(place5[indexNo+3]).innerHTML = numberToTransfer;
+		 document.getElementById(place5[indexNo+4]).innerHTML = numberToTransfer;
+		 document.getElementById(place5[indexNo+5]).innerHTML = numberToTransfer;
+		 document.getElementById(place5[indexNo+6]).innerHTML = numberToTransfer;
+		 document.getElementById(place5[indexNo+7]).innerHTML = numberToTransfer;
+		 
+	 }	 
+}
+function placeNumber6(indexNo){
+	 var pSquare = place6[indexNo];
+     var numberLegal = document.getElementById(pSquare).innerHTML;	   
+	 var squareState = document.getElementById(pSquare).style.fontWeight;
+	// alert(squareState);
+	 if(numberToTransfer === numberLegal && squareState !== "bold"){	     
+         document.getElementById(pSquare).innerHTML = numberToTransfer;
+		 document.getElementById(pSquare).style.color = '#000';
+		 document.getElementById(pSquare).style.fontWeight = 'bold';
+		 document.getElementById(pSquare).style.backgroundColor = '#0fc';
+		 document.getElementById(origin).innerHTML = "";
+	 }
+	 else if(numberLegal === "?"){
+	     document.getElementById(pSquare).innerHTML = numberToTransfer;
+		 document.getElementById(pSquare).style.color = '#000';
+		 document.getElementById(pSquare).style.fontWeight = 'bold';
+		 document.getElementById(pSquare).style.backgroundColor = '#0fc';
+		 document.getElementById(origin).innerHTML = "";
+		 document.getElementById(place6[indexNo+1]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+2]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+3]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+4]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+5]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+6]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+7]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+8]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+9]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+10]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+11]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+12]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+13]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+14]).innerHTML = numberToTransfer;
+		 document.getElementById(place6[indexNo+15]).innerHTML = numberToTransfer;
+	 }	 
+}
 </script>
 </head>
 <body>
 <div class="mainDiv">
    <div class="numberSelectBoxRow">
      <div class="numberRand" id="nr01" OnMouseDown="getNumber('nr01')"></div>
-	 <div class="numberRand" id="nr02" OnClick="getNumber('nr02')"></div>
-	 <div class="numberRand" id="nr03" OnClick="getNumber('nr03')"></div>
-	 <div class="numberRand" id="nr04" OnClick="getNumber('nr04')"></div>
-	 <div class="numberRand" id="nr05" OnClick="getNumber('nr05')"></div>
-	 <div class="numberRand" id="nr06" OnClick="getNumber('nr06')"></div>
-	 <div class="numberRand" id="nr07" OnClick="getNumber('nr07')"></div>
-	 <div class="numberRand" id="nr08" OnClick="getNumber('nr08')"></div>
-	 <div class="numberRand" id="nr09" OnClick="getNumber('nr09')"></div>
-	 <div class="numberRand" id="nr10" OnClick="getNumber('nr10')"></div>
+	 <div class="numberRand" id="nr02" OnMouseDown="getNumber('nr02')"></div>
+	 <div class="numberRand" id="nr03" OnMouseDown="getNumber('nr03')"></div>
+	 <div class="numberRand" id="nr04" OnMouseDown="getNumber('nr04')"></div>
+	 <div class="numberRand" id="nr05" OnMouseDown="getNumber('nr05')"></div>
+	 <div class="numberRand" id="nr06" OnMouseDown="getNumber('nr06')"></div>
+	 <div class="numberRand" id="nr07" OnMouseDown="getNumber('nr07')"></div>
+	 <div class="numberRand" id="nr08" OnMouseDown="getNumber('nr08')"></div>
+	 <div class="numberRand" id="nr09" OnMouseDown="getNumber('nr09')"></div>
+	 <div class="numberRand" id="nr10" OnMouseDown="getNumber('nr10')"></div>
 	 <div class="pickRandBox">
 	      <input class="pickRandBtn" type="button" value="New Numbers" OnClick="genRandNums()">
 	 </div>
@@ -154,175 +244,175 @@ function placeNumber3(indexNo){
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place" id="p1_05" OnClick="placeNumber('p1_05')">4</div>
-			<div class="place" id="p1_06" OnClick="placeNumber('p1_06')">5</div>
-			<div class="place" id="p1_07" OnClick="placeNumber('p1_07')">6</div>
-			<div class="place" id="p1_08" OnClick="placeNumber('p1_08')">7</div>
+	        <div class="place" id="p1_05" OnMouseUp="placeNumber('p1_05')">4</div>
+			<div class="place" id="p1_06" OnMouseUp="placeNumber('p1_06')">5</div>
+			<div class="place" id="p1_07" OnMouseUp="placeNumber('p1_07')">6</div>
+			<div class="place" id="p1_08" OnMouseUp="placeNumber('p1_08')">7</div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place" id="p1_09" OnClick="placeNumber('p1_09')">8</div>
-			<div class="place" id="p1_10" OnClick="placeNumber('p1_10')">9</div>
-			<div class="place" id="p1_11" OnClick="placeNumber('p1_11')">A</div>
-			<div class="place" id="p1_12" OnClick="placeNumber('p1_12')">B</div>
+	        <div class="place" id="p1_09" OnMouseUp="placeNumber('p1_09')">8</div>
+			<div class="place" id="p1_10" OnMouseUp="placeNumber('p1_10')">9</div>
+			<div class="place" id="p1_11" OnMouseUp="placeNumber('p1_11')">A</div>
+			<div class="place" id="p1_12" OnMouseUp="placeNumber('p1_12')">B</div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place" id="p1_13" OnClick="placeNumber('p1_13')">C</div>
-			<div class="place" id="p1_14" OnClick="placeNumber('p1_14')">D</div>
-			<div class="place" id="p1_15" OnClick="placeNumber('p1_15')">E</div>
-			<div class="place" id="p1_16" OnClick="placeNumber('p1_16')">F</div>
+	        <div class="place" id="p1_13" OnMouseUp="placeNumber('p1_13')">C</div>
+			<div class="place" id="p1_14" OnMouseUp="placeNumber('p1_14')">D</div>
+			<div class="place" id="p1_15" OnMouseUp="placeNumber('p1_15')">E</div>
+			<div class="place" id="p1_16" OnMouseUp="placeNumber('p1_16')">F</div>
 			<div style="clear:both"></div>
 	   </div>
   </div>
   <div class="boxOf16">
        <div class="rowOf4">
-	        <div class="place" id="p2_01" OnClick="placeNumber2(0)">?</div>
-			<div class="place" id="p2_02" OnClick="placeNumber2(1)"></div>
-			<div class="place" id="p2_03" OnClick="placeNumber2(2)">?</div>
-			<div class="place" id="p2_04" OnClick="placeNumber2(3)"></div>
+	        <div class="place" id="p2_01" OnMouseUp="placeNumber2(0)">?</div>
+			<div class="place" id="p2_02" OnMouseUp="placeNumber2(1)"></div>
+			<div class="place" id="p2_03" OnMouseUp="placeNumber2(2)">?</div>
+			<div class="place" id="p2_04" OnMouseUp="placeNumber2(3)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place" id="p2_05" OnClick="placeNumber2(4)">?</div>
-			<div class="place" id="p2_06" OnClick="placeNumber2(5)"></div>
-			<div class="place" id="p2_07" OnClick="placeNumber2(6)">?</div>
-			<div class="place" id="p2_08" OnClick="placeNumber2(7)"></div>
+	        <div class="place" id="p2_05" OnMouseUp="placeNumber2(4)">?</div>
+			<div class="place" id="p2_06" OnMouseUp="placeNumber2(5)"></div>
+			<div class="place" id="p2_07" OnMouseUp="placeNumber2(6)">?</div>
+			<div class="place" id="p2_08" OnMouseUp="placeNumber2(7)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place" id="p2_09" OnClick="placeNumber2(8)">?</div>
-			<div class="place" id="p2_10" OnClick="placeNumber2(9)"></div>
-			<div class="place" id="p2_11" OnClick="placeNumber2(10)">?</div>
-			<div class="place" id="p2_12" OnClick="placeNumber2(11)"></div>
+	        <div class="place" id="p2_09" OnMouseUp="placeNumber2(8)">?</div>
+			<div class="place" id="p2_10" OnMouseUp="placeNumber2(9)"></div>
+			<div class="place" id="p2_11" OnMouseUp="placeNumber2(10)">?</div>
+			<div class="place" id="p2_12" OnMouseUp="placeNumber2(11)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place" id="p2_13" OnClick="placeNumber2(12)">?</div>
-			<div class="place" id="p2_14" OnClick="placeNumber2(13)"></div>
-			<div class="place" id="p2_15" OnClick="placeNumber2(14)">?</div>
-			<div class="place" id="p2_16" OnClick="placeNumber2(15)"></div>
+	        <div class="place" id="p2_13" OnMouseUp="placeNumber2(12)">?</div>
+			<div class="place" id="p2_14" OnMouseUp="placeNumber2(13)"></div>
+			<div class="place" id="p2_15" OnMouseUp="placeNumber2(14)">?</div>
+			<div class="place" id="p2_16" OnMouseUp="placeNumber2(15)"></div>
 			<div style="clear:both"></div>
 	   </div>
   </div>
   <div class="boxOf16">
        <div class="rowOf4">
-	        <div class="place" id="p3_01" OnClick="placeNumber3(0)">?</div>
-			<div class="place" id="p3_02" OnClick="placeNumber3(1)"></div>
-			<div class="place" id="p3_03" OnClick="placeNumber3(2)"></div>
-			<div class="place" id="p3_04" OnClick="placeNumber3(3)"></div>
+	        <div class="place" id="p3_01" OnMouseUp="placeNumber3(0)">?</div>
+			<div class="place" id="p3_02" OnMouseUp="placeNumber3(1)"></div>
+			<div class="place" id="p3_03" OnMouseUp="placeNumber3(2)"></div>
+			<div class="place" id="p3_04" OnMouseUp="placeNumber3(3)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place" id="p3_05" OnClick="placeNumber3(4)">?</div>
-			<div class="place" id="p3_06" OnClick="placeNumber3(5)"></div>
-			<div class="place" id="p3_07" OnClick="placeNumber3(6)"></div>
-			<div class="place" id="p3_08" OnClick="placeNumber3(7)"></div>
+	        <div class="place" id="p3_05" OnMouseUp="placeNumber3(4)">?</div>
+			<div class="place" id="p3_06" OnMouseUp="placeNumber3(5)"></div>
+			<div class="place" id="p3_07" OnMouseUp="placeNumber3(6)"></div>
+			<div class="place" id="p3_08" OnMouseUp="placeNumber3(7)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place" id="p3_09" OnClick="placeNumber3(8)">?</div>
-			<div class="place" id="p3_10" OnClick="placeNumber3(9)"></div>
-			<div class="place" id="p3_11" OnClick="placeNumber3(10)"></div>
-			<div class="place" id="p3_12" OnClick="placeNumber3(11)"></div>
+	        <div class="place" id="p3_09" OnMouseUp="placeNumber3(8)">?</div>
+			<div class="place" id="p3_10" OnMouseUp="placeNumber3(9)"></div>
+			<div class="place" id="p3_11" OnMouseUp="placeNumber3(10)"></div>
+			<div class="place" id="p3_12" OnMouseUp="placeNumber3(11)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place" id="p3_13" OnClick="placeNumber3(12)">?</div>
-			<div class="place" id="p3_14" OnClick="placeNumber3(13)"></div>
-			<div class="place" id="p3_15" OnClick="placeNumber3(14)"></div>
-			<div class="place" id="p3_16" OnClick="placeNumber3(15)"></div>
+	        <div class="place" id="p3_13" OnMouseUp="placeNumber3(12)">?</div>
+			<div class="place" id="p3_14" OnMouseUp="placeNumber3(13)"></div>
+			<div class="place" id="p3_15" OnMouseUp="placeNumber3(14)"></div>
+			<div class="place" id="p3_16" OnMouseUp="placeNumber3(15)"></div>
 			<div style="clear:both"></div>
 	   </div>
   </div>
   <div style="clear:both"></div>
   <div class="boxOf16">
        <div class="rowOf4">
-	        <div class="place">?</div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p4_01" OnMouseUp="placeNumber4(0)">?</div>
+			<div class="place" id="p4_02" OnMouseUp="placeNumber4(1)"></div>
+			<div class="place" id="p4_03" OnMouseUp="placeNumber4(2)"></div>
+			<div class="place" id="p4_04" OnMouseUp="placeNumber4(3)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place">?</div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p4_05" OnMouseUp="placeNumber4(4)">?</div>
+			<div class="place" id="p4_06" OnMouseUp="placeNumber4(5)"></div>
+			<div class="place" id="p4_07" OnMouseUp="placeNumber4(6)"></div>
+			<div class="place" id="p4_08" OnMouseUp="placeNumber4(7)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place">?</div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p4_09" OnMouseUp="placeNumber4(8)">?</div>
+			<div class="place" id="p4_10" OnMouseUp="placeNumber4(9)"></div>
+			<div class="place" id="p4_11" OnMouseUp="placeNumber4(10)"></div>
+			<div class="place" id="p4_12" OnMouseUp="placeNumber4(11)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place">?</div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p4_13" OnMouseUp="placeNumber4(12)">?</div>
+			<div class="place" id="p4_14" OnMouseUp="placeNumber4(13)"></div>
+			<div class="place" id="p4_15" OnMouseUp="placeNumber4(14)"></div>
+			<div class="place" id="p4_16" OnMouseUp="placeNumber4(15)"></div>
 			<div style="clear:both"></div>
 	   </div>
   </div>
   <div class="boxOf16">
        <div class="rowOf4">
-	        <div class="place">?</div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p5_01" OnMouseUp="placeNumber5(0)">?</div>
+			<div class="place" id="p5_02" OnMouseUp="placeNumber5(1)"></div>
+			<div class="place" id="p5_03" OnMouseUp="placeNumber5(2)"></div>
+			<div class="place" id="p5_04" OnMouseUp="placeNumber5(3)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p5_05" OnMouseUp="placeNumber5(4)"></div>
+			<div class="place" id="p5_06" OnMouseUp="placeNumber5(5)"></div>
+			<div class="place" id="p5_07" OnMouseUp="placeNumber5(6)"></div>
+			<div class="place" id="p5_08" OnMouseUp="placeNumber5(7)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place">?</div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p5_09" OnMouseUp="placeNumber5(8)">?</div>
+			<div class="place" id="p5_10" OnMouseUp="placeNumber5(9)"></div>
+			<div class="place" id="p5_11" OnMouseUp="placeNumber5(10)"></div>
+			<div class="place" id="p5_12" OnMouseUp="placeNumber5(11)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p5_13" OnMouseUp="placeNumber5(12)"></div>
+			<div class="place" id="p5_14" OnMouseUp="placeNumber5(13)"></div>
+			<div class="place" id="p5_15" OnMouseUp="placeNumber5(14)"></div>
+			<div class="place" id="p5_16" OnMouseUp="placeNumber5(15)"></div>
 			<div style="clear:both"></div>
 	   </div>
   </div>
   <div class="boxOf16">
        <div class="rowOf4">
-	        <div class="place">?</div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p6_01" OnMouseUp="placeNumber6(0)">?</div>
+			<div class="place" id="p6_02" OnMouseUp="placeNumber6(1)"></div>
+			<div class="place" id="p6_03" OnMouseUp="placeNumber6(2)"></div>
+			<div class="place" id="p6_04" OnMouseUp="placeNumber6(3)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p6_05" OnMouseUp="placeNumber6(4)"></div>
+			<div class="place" id="p6_06" OnMouseUp="placeNumber6(5)"></div>
+			<div class="place" id="p6_07" OnMouseUp="placeNumber6(6)"></div>
+			<div class="place" id="p6_08" OnMouseUp="placeNumber6(7)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p6_09" OnMouseUp="placeNumber6(8)"></div>
+			<div class="place" id="p6_10" OnMouseUp="placeNumber6(9)"></div>
+			<div class="place" id="p6_11" OnMouseUp="placeNumber6(10)"></div>
+			<div class="place" id="p6_12" OnMouseUp="placeNumber6(11)"></div>
 			<div style="clear:both"></div>
 	   </div>
 	   <div class="rowOf4">
-	        <div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
-			<div class="place"></div>
+	        <div class="place" id="p6_13" OnMouseUp="placeNumber6(12)"></div>
+			<div class="place" id="p6_14" OnMouseUp="placeNumber6(13)"></div>
+			<div class="place" id="p6_15" OnMouseUp="placeNumber6(14)"></div>
+			<div class="place" id="p6_16" OnMouseUp="placeNumber6(15)"></div>
 			<div style="clear:both"></div>
 	   </div>
   </div>
