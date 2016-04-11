@@ -16,6 +16,17 @@ html{
   text-align: center;
   background-color: #ccccff;
 }
+.note{
+  float: left;
+  font-size: 25px;
+  margin-top: 25px;
+  margin-right: 15px;
+}
+.sets{
+  float: left;
+  font-size: 25px;
+  margin-top: 25px; 
+}
 .pickRandBtn{
     height: 60px;
 	width: 90px;	
@@ -60,12 +71,22 @@ var place5 = new Array("p5_01","p5_02","p5_03","p5_04","p5_05","p5_06","p5_07","
 var place6 = new Array("p6_01","p6_02","p6_03","p6_04","p6_05","p6_06","p6_07","p6_08","p6_09","p6_10","p6_11","p6_12","p6_13","p6_14","p6_15","p6_16");
 var numberToTransfer = "";
 var origin = "";
+var randSets = 10;
+
 function genRandNums(){
-    for( var i = 0; i < 10; i++){
-		var number = Math.floor(Math.random()*16);
-		//alert(randomNumbers[number]);
-		document.getElementById(ids[i]).innerHTML = randomNumbers[number];
-    }
+    if(randSets > 0){
+		for( var i = 0; i < 10; i++){
+			var number = Math.floor(Math.random()*16);
+			//alert(randomNumbers[number]);
+			document.getElementById(ids[i]).innerHTML = randomNumbers[number];
+			
+		}
+		randSets--;
+		document.getElementById("sets").innerHTML = randSets;
+	}
+	else{
+	    endGame();
+	}
 }
 function getNumber(rSquare){
      origin = rSquare;
@@ -215,6 +236,10 @@ function placeNumber6(indexNo){
 		 document.getElementById(place6[indexNo+15]).innerHTML = numberToTransfer;
 	 }	 
 }
+function endGame(){
+    document.getElementById("note").innerHTML = "Game over, your score:";
+	document.getElementById("sets").innerHTML = "Scoring code not yet written";
+}
 </script>
 </head>
 <body>
@@ -233,7 +258,15 @@ function placeNumber6(indexNo){
 	 <div class="pickRandBox">
 	      <input class="pickRandBtn" type="button" value="New Numbers" OnClick="genRandNums()">
 	 </div>
+	 <div class="pickRandBox">
+	      <input class="pickRandBtn" type="button" value="Finish" OnClick="endGame()">
+	 </div>
      <div style="clear:both"></div>
+  </div>
+  <div class="infoArea">
+      <div class="note" id="note">Number of new sets of numbers remaining:</div>
+	  <div class="sets" id="sets">10</div>
+	  <div style="clear:both"></div>
   </div>
   <div class="boxOf16">
        <div class="rowOf4">
