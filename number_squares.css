@@ -1,0 +1,58 @@
+/*  NumberSquares CSS */
+html{
+   background-color: #dfaf7f;
+}
+.numberRand{
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  float: left;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #ccccff;
+}
+.note{
+  float: left;
+  font-size: 25px;
+  margin-top: 25px;
+  margin-right: 15px;
+}
+.sets{
+  float: left;
+  font-size: 25px;
+  margin-top: 25px; 
+}
+.pickRandBtn{
+    height: 60px;
+	width: 90px;	
+	color: #fff;
+	background-color: #4b0;
+	font-size: 18px;
+	font-weight: 500;
+    margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 40px;
+	border: 0px solid transparent;
+	border-radius: 15px;
+	white-space: normal;
+	float: left;
+}
+.boxOf16{
+   margin-top: 45px;
+   float: left;
+   margin-left: 20px;
+}
+.rowOf4{
+
+}
+.place{
+   width: 40px;
+  height: 40px;
+  margin: 3px;
+  float: left;
+  font-size: 35px;
+  text-align: center;
+  background-color: #fff; 
+  color: aaa;
+}
