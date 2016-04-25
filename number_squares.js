@@ -5,6 +5,7 @@ var place3 = new Array("p3_01","p3_02","p3_03","p3_04","p3_05","p3_06","p3_07","
 var place4 = new Array("p4_01","p4_02","p4_03","p4_04","p4_05","p4_06","p4_07","p4_08","p4_09","p4_10","p4_11","p4_12","p4_13","p4_14","p4_15","p4_16");
 var place5 = new Array("p5_01","p5_02","p5_03","p5_04","p5_05","p5_06","p5_07","p5_08","p5_09","p5_10","p5_11","p5_12","p5_13","p5_14","p5_15","p5_16");
 var place6 = new Array("p6_01","p6_02","p6_03","p6_04","p6_05","p6_06","p6_07","p6_08","p6_09","p6_10","p6_11","p6_12","p6_13","p6_14","p6_15","p6_16");
+var score1 = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 var numberToTransfer = "";
 var origin = "";
 var randSets = 10;
@@ -32,13 +33,24 @@ function getNumber(rSquare){
 function placeNumber(pSquare){
      var numberLegal = document.getElementById(pSquare).innerHTML;	 
      var squareState = document.getElementById(pSquare).style.fontWeight;
-	// alert(squareState);
+	/* alert(pSquare);
+	 var str = pSquare;
+     var res = str.substring(3, 5);
+	 alert(res);
+	 resI = Number(res).toString();
+	 alert(resI);
+	 alert(place2[resI]);*/
 	 if(numberToTransfer === numberLegal && squareState !== "bold"){
          document.getElementById(pSquare).innerHTML = numberToTransfer;
 		 document.getElementById(pSquare).style.color = '#000';
 		 document.getElementById(pSquare).style.fontWeight = 'bold';
 		 document.getElementById(pSquare).style.backgroundColor = '#0fc';
 		 document.getElementById(origin).innerHTML = "";
+		 indexNo = pSquare.substring(3,5);
+		 indexNo = Number(indexNo).toString();
+		 score1[indexNo] = 1;
+		 score1[0]++;
+		 alert(score1[0]);
 	 }
 }
 function placeNumber2(indexNo){
