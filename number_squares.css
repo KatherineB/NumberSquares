@@ -3,6 +3,12 @@ html{
    background-color: #dfaf7f;
    font-family: arial, verdana, tahoma;
 }
+.mainHeading{
+	color: #668866;
+	font-size: 30px;
+	padding: 17px;
+	margin-left: 4px;
+}
 .numberSelectBoxRow{
 	margin-left: 16px;
 }
@@ -50,13 +56,12 @@ html{
   font-size: 35px;
   text-align: center;
   background-color: #fff; 
-  color: aaa;
+  color: #aaaaaa;
 }
 .infoArea{
 	float: left;
 	margin-top: 48px;
 	margin-left: 45px;
-	width: 190px;
 	text-align: center;
 }
 .noteBox{
@@ -64,6 +69,7 @@ html{
 	color: #ffffff;
 	padding: 10px;
 	height: 90px;
+	width: 170px;
 }
 .note{
   font-size: 18px;
@@ -81,6 +87,8 @@ html{
 	color: #ffffff;
 	padding: 10px;
 	height: 90px;
+	width: 170px;
+	display: none;
 }
 .gameOver{
   font-size: 22px;

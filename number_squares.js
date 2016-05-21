@@ -1,5 +1,6 @@
 var ids = new Array("nr01","nr02","nr03","nr04","nr05","nr06","nr07","nr08","nr09","nr10");
 var randomNumbers = new Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F");
+var place1 = new Array("p1_01","p1_02","p1_03","p1_04","p1_05","p1_06","p1_07","p1_08","p1_09","p1_10","p1_11","p1_12","p1_13","p1_14","p1_15","p1_16");
 var place2 = new Array("p2_01","p2_02","p2_03","p2_04","p2_05","p2_06","p2_07","p2_08","p2_09","p2_10","p2_11","p2_12","p2_13","p2_14","p2_15","p2_16");
 var place3 = new Array("p3_01","p3_02","p3_03","p3_04","p3_05","p3_06","p3_07","p3_08","p3_09","p3_10","p3_11","p3_12","p3_13","p3_14","p3_15","p3_16");
 var place4 = new Array("p4_01","p4_02","p4_03","p4_04","p4_05","p4_06","p4_07","p4_08","p4_09","p4_10","p4_11","p4_12","p4_13","p4_14","p4_15","p4_16");
@@ -20,27 +21,108 @@ var totalScore = 0;
 var numberToTransfer = "";
 var origin = "";
 var randSets = 10;
+function newGame(){
+	score1 = 0;
+	score2 = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+	score3 = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+	score4 = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+	score5 = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+	score6 = 0;
+	basicScore = 0;
+	bonusScore2 = 0;
+	bonusScore3 = 0;
+	bonusScore4 = 0;
+	bonusScore5 = 0;
+	totalScore = 0;
+	numberToTransfer = "";
+	origin = "";
+	randSets = 10;
+	document.getElementById("noteBox").style.display = "inline-block";
+	document.getElementById("scoreBox").style.display = "none";
+	document.getElementById("noteBox").style.backgroundColor = "#668866";
+	document.getElementById("newNumbersBtn").value = "New Numbers";
+	document.getElementById("sets").innerHTML = randSets;
+	for( var i = 0; i < 10; i++){		
+			document.getElementById(ids[i]).innerHTML = "";		
+	}
+	for ( var i = 0; i < 16; i++){
+		document.getElementById(place1[i]).style.backgroundColor = "#ffffff";
+		document.getElementById(place1[i]).style.fontWeight = "normal";
+		document.getElementById(place1[i]).style.color = "#aaaaaa";
+		document.getElementById(place2[i]).style.backgroundColor = "#ffffff";
+		document.getElementById(place2[i]).style.fontWeight = "normal";
+		document.getElementById(place2[i]).style.color = "#aaaaaa";
+		document.getElementById(place3[i]).style.backgroundColor = "#ffffff";
+		document.getElementById(place3[i]).style.fontWeight = "normal";
+		document.getElementById(place3[i]).style.color = "#aaaaaa";
+		document.getElementById(place4[i]).style.backgroundColor = "#ffffff";
+		document.getElementById(place4[i]).style.fontWeight = "normal";
+		document.getElementById(place4[i]).style.color = "#aaaaaa";
+		document.getElementById(place5[i]).style.backgroundColor = "#ffffff";
+		document.getElementById(place5[i]).style.fontWeight = "normal";
+		document.getElementById(place5[i]).style.color = "#aaaaaa";
+		document.getElementById(place6[i]).style.backgroundColor = "#ffffff";
+		document.getElementById(place6[i]).style.fontWeight = "normal";
+		document.getElementById(place6[i]).style.color = "#aaaaaa";
+	}
+	for ( var i = 0; i < 16; i+=2){		
+		document.getElementById(place2[i]).innerHTML = "?";
+		document.getElementById(place2[i+1]).innerHTML = "";
+	}
+	for ( var i = 0; i < 16; i+=4){		
+		document.getElementById(place3[i]).innerHTML = "?";
+		document.getElementById(place3[i+1]).innerHTML = "";
+		document.getElementById(place3[i+2]).innerHTML = "";
+		document.getElementById(place3[i+3]).innerHTML = "";
+	}
+	for ( var i = 0; i < 16; i+=4){		
+		document.getElementById(place4[i]).innerHTML = "?";
+		document.getElementById(place4[i+1]).innerHTML = "";
+		document.getElementById(place4[i+2]).innerHTML = "";
+		document.getElementById(place4[i+3]).innerHTML = "";
+	}
+	for ( var i = 0; i < 16; i++){		
+		document.getElementById(place5[i]).innerHTML = "";
+	}
+	document.getElementById(place5[0]).innerHTML = "?";
+	document.getElementById(place5[8]).innerHTML = "?";
+	for ( var i = 0; i < 16; i++){		
+		document.getElementById(place6[i]).innerHTML = "";
+	}
+	document.getElementById(place6[0]).innerHTML = "?";
+}
 
 function genRandNums(){
-    if(randSets > 0){
+	randSets--;
+    if(randSets > -1){
 		for( var i = 0; i < 10; i++){
 			var number = Math.floor(Math.random()*16);
 			//alert(randomNumbers[number]);
-			document.getElementById(ids[i]).innerHTML = randomNumbers[number];
-			
-		}
-		randSets--;
+			document.getElementById(ids[i]).innerHTML = randomNumbers[number];		
+		}	
 		document.getElementById("sets").innerHTML = randSets;
+		
+		if ( randSets == 2 || randSets == 3 ){
+			document.getElementById("noteBox").style.backgroundColor = "#ddaa00";
+	    }
+		if ( randSets == 0 || randSets == 1 ){
+			document.getElementById("noteBox").style.backgroundColor = "#ff0000";
+	    }
+		if ( randSets == 0){
+			document.getElementById("newNumbersBtn").value = "End Game";
+		}
 	}
 	else{
-	    endGame();
+		if (randSets == -1){
+			endGame();
+		}	    		
 	}
 }
 function getNumber(rSquare){
      origin = rSquare;
      numberToTransfer = document.getElementById(rSquare).innerHTML;
 }
-function placeNumber(pSquare){
+function placeNumber1(pSquare){
      var numberLegal = document.getElementById(pSquare).innerHTML;	 
      var squareState = document.getElementById(pSquare).style.fontWeight;
 	 if(numberToTransfer === numberLegal && squareState !== "bold"){
@@ -199,7 +281,9 @@ if( (numberToTransfer === numberLegal && squareState !== "bold") || numberLegal 
 
 }
 function endGame(){
-    document.getElementById("note").innerHTML = "Game over, your score:";
+    document.getElementById("noteBox").style.display = "none";
+	document.getElementById("scoreBox").style.display = "inline-block";
+	
 	basicScore = score1 + score2[0] + score3[0] + score4[0] + score5[0] + score6;
 	//alert("basic score: " + basicScore);
 	if (score2[0] < 48){
@@ -235,7 +319,7 @@ function endGame(){
 	}
 	//alert(bonusScore5);
 	totalScore = basicScore + bonusScore2 + bonusScore3 + bonusScore4 + bonusScore5;
-	document.getElementById("sets").innerHTML = totalScore;
+	document.getElementById("score").innerHTML = totalScore;
 }
 
 
