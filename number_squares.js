@@ -321,5 +321,12 @@ function endGame(){
 	totalScore = basicScore + bonusScore2 + bonusScore3 + bonusScore4 + bonusScore5;
 	document.getElementById("score").innerHTML = totalScore;
 }
+function openHowToPlay(){
+	document.getElementById("how").style.display = "inline-block";
+}
+function closeHowToPlay(){
+	document.getElementById("how").style.display = "none";
+}
+
 
 

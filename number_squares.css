@@ -37,6 +37,36 @@ html{
 	white-space: normal;
 	float: left;
 }
+.how{
+	margin-left: 25px;
+	color: #fff;
+	background-color: #668866;
+	padding: 15px;
+	width: 600px;
+	display: none;
+	position: absolute;
+}
+.close{
+	text-align: center;
+}
+.closeX{
+	font-size: 24px;
+	text-align: right;
+	cursor: default;
+}
+.closeBtn{
+	height: 30px;
+	width: 80px;	
+	color: #668866;
+	background-color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	border: 0px solid transparent;
+	border-radius: 15px;
+}
+.howTitle{
+	font-size: 22px;
+}
 .playArea{
 	float: left;
 }
@@ -104,6 +134,20 @@ html{
   text-align: center;
 }
 .newGameBtn{
+    height: 35px;
+	width: 190px;	
+	color: #fff;
+	background-color: #4b0;
+	font-size: 18px;
+	font-weight: 500;
+    margin-top: 20px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	border: 0px solid transparent;
+	border-radius: 15px;
+	white-space: normal;
+}
+.howBtn{
     height: 35px;
 	width: 190px;	
 	color: #fff;
