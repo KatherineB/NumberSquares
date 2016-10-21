@@ -97,7 +97,6 @@ function genRandNums(){
     if(randSets > -1){
 		for( var i = 0; i < 10; i++){
 			var number = Math.floor(Math.random()*16);
-			//alert(randomNumbers[number]);
 			document.getElementById(ids[i]).innerHTML = randomNumbers[number];		
 		}	
 		document.getElementById("sets").innerHTML = randSets;
@@ -121,6 +120,7 @@ function genRandNums(){
 function getNumber(rSquare){
      origin = rSquare;
      numberToTransfer = document.getElementById(rSquare).innerHTML;
+	 event.preventDefault();
 }
 function placeNumber1(pSquare){
      var numberLegal = document.getElementById(pSquare).innerHTML;	 
@@ -135,7 +135,6 @@ function placeNumber1(pSquare){
 	     if (score1 == 16){
 			 score1 = 32;
 	     }
-		// alert(score1);
 	 }
 }
 function placeNumber2(indexNo){
@@ -158,8 +157,7 @@ function placeNumber2(indexNo){
 		 score2[0]++;
 	     if (score2[0] == 16){
 			 score2[0] = 48;
-	     }
-		// alert(score2[0]);		
+	     }	
 	 }  	
 }
 function placeNumber3(indexNo){
@@ -185,7 +183,6 @@ function placeNumber3(indexNo){
 	     if (score3[0] == 16){
 			 score3[0] = 48;
 	     }
-		// alert(score3[0]);	
 	 }
 }
 function placeNumber4(indexNo){
@@ -211,7 +208,6 @@ function placeNumber4(indexNo){
 	     if (score4[0] == 16){
 			 score4[0] = 48;
 	     }
-		// alert(score4[0]);	
 	 }
 }
 function placeNumber5(indexNo){
@@ -241,7 +237,6 @@ function placeNumber5(indexNo){
 	     if (score5[0] == 16){
 			 score5[0] = 48;
 	     }
-		// alert(score5[0]);	
 	 }
 }
 function placeNumber6(indexNo){
@@ -276,7 +271,6 @@ if( (numberToTransfer === numberLegal && squareState !== "bold") || numberLegal 
 	     if (score6 == 16){
 			 score6 = 64;
 	     }
-		// alert(score6);
 	 }
 
 }
@@ -285,7 +279,7 @@ function endGame(){
 	document.getElementById("scoreBox").style.display = "inline-block";
 	
 	basicScore = score1 + score2[0] + score3[0] + score4[0] + score5[0] + score6;
-	//alert("basic score: " + basicScore);
+
 	if (score2[0] < 48){
 		for ( i = 1; i < 17; i+=2){
 		  if (score2[i] + score2[i+1] == 2){
@@ -293,7 +287,7 @@ function endGame(){
 		  }
 		}
 	}
-	//alert(bonusScore2);
+
 	if (score3[0] < 48){
 		for ( i = 1; i < 17; i+=4){
 		  if (score3[i] + score3[i+1] + score3[i+2] + score3[i+3] == 4){
@@ -301,7 +295,7 @@ function endGame(){
 		  }
 		}
 	}
-	//alert(bonusScore3);
+
 	if (score4[0] < 48){
 		for ( i = 1; i < 17; i+=4){
 		  if (score4[i] + score4[i+1] + score4[i+2] + score4[i+3] == 4){
@@ -309,7 +303,7 @@ function endGame(){
 		  }
 		}
 	}
-	//alert(bonusScore4);
+
 	if (score5[0] < 48){
 		for ( i = 1; i < 17; i+=8){
 		  if (score5[i] + score5[i+1] + score5[i+2] + score5[i+3] + score5[i+4] + score5[i+5] + score5[i+6] + score5[i+7]== 8){
@@ -317,7 +311,7 @@ function endGame(){
 		  }
 		}
 	}
-	//alert(bonusScore5);
+
 	totalScore = basicScore + bonusScore2 + bonusScore3 + bonusScore4 + bonusScore5;
 	document.getElementById("score").innerHTML = totalScore;
 }
@@ -327,6 +321,8 @@ function openHowToPlay(){
 function closeHowToPlay(){
 	document.getElementById("how").style.display = "none";
 }
+
+
 
 
 

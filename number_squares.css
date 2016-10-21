@@ -38,21 +38,24 @@ html{
 	float: left;
 }
 .how{
-	margin-left: 25px;
+	margin-left: 23px;
 	color: #fff;
 	background-color: #668866;
-	padding: 15px;
 	width: 600px;
 	display: none;
 	position: absolute;
 }
 .close{
 	text-align: center;
+	padding-bottom: 20px;
 }
 .closeX{
+	float: right;
+	margin-right: 5px;
 	font-size: 32px;
-	text-align: right;
+	/*text-align: right;*/
 	cursor: default;
+	display: inline-block;
 }
 .closeBtn{
 	height: 30px;
@@ -66,6 +69,11 @@ html{
 }
 .howTitle{
 	font-size: 22px;
+	padding-left: 15px;
+}
+.howText{
+	padding-left: 15px;
+	padding-right: 15px;
 }
 .playArea{
 	float: left;
