@@ -21,6 +21,7 @@ html{
   font-weight: bold;
   text-align: center;
   background-color: #ccccff;
+  cursor: default;
 }
 .newNumbersBtn{
     height: 60px;
@@ -95,6 +96,7 @@ html{
   text-align: center;
   background-color: #fff; 
   color: #aaaaaa;
+  cursor: default;
 }
 .infoArea{
 	float: left;
