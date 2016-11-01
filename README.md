@@ -1,6 +1,10 @@
 # NumberSquares
 This game is about placing randomly generated numbers in the right positions to earn the most points.
 
+I created this game just to have another short, quick game to add to my collection of games to play.  I thought it would be fun to have a game that is in hexadecimal.
+
+The game is only recommended for desktop use.  It is not responsive and does not fit well on other screen sizes.
+
 ![alt text](NS_screenshot_May2016.png "May 2016 Screenshot of NumberSquares Game")
 
 ### How to Play NumberSquares
