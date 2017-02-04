@@ -101,6 +101,8 @@ function genRandNums(){
 		}	
 		document.getElementById("sets").innerHTML = randSets;
 		
+		/* Changes colour of notice to user when sets of random numbers are 
+		   getting close to running out */
 		if ( randSets == 2 || randSets == 3 ){
 			document.getElementById("noteBox").style.backgroundColor = "#ddaa00";
 	    }
@@ -118,6 +120,8 @@ function genRandNums(){
 	}
 }
 
+/* These control what happens when the player starts to drag a number from the 
+   row of random numbers at the top of the play area */
 nr01.onmousedown = function(e){
    origin = 'nr01';
    numberToTransfer = document.getElementById('nr01').innerHTML;
@@ -193,6 +197,9 @@ mainDiv.onmouseup = function(e){
 	 document.getElementById('mainDiv').style.cursor = 'default';
 	 $('.place').css('cursor', 'default');
 }
+
+/* A different placeNumber function exists for each of the main large squares since they
+   require different treatment when a number is added to them */
 function placeNumber1(pSquare){
      var numberLegal = document.getElementById(pSquare).innerHTML;	 
      var squareState = document.getElementById(pSquare).style.fontWeight;
@@ -315,7 +322,7 @@ function placeNumber6(indexNo){
      var numberLegal = document.getElementById(pSquare).innerHTML;	   
 	 var squareState = document.getElementById(pSquare).style.fontWeight;
 
-if( (numberToTransfer === numberLegal && squareState !== "bold") || numberLegal === "?"){	     
+         if( (numberToTransfer === numberLegal && squareState !== "bold") || numberLegal === "?"){	     
          document.getElementById(pSquare).innerHTML = numberToTransfer;
 		 document.getElementById(pSquare).style.color = '#000';
 		 document.getElementById(pSquare).style.fontWeight = 'bold';
