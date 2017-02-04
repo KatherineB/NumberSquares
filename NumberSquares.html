@@ -2,7 +2,10 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NumberSquares</title>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
 <link rel="stylesheet" href="number_squares.css">
+
+
 </head>
 <body>
 <div class="mainDiv" id="mainDiv">
@@ -40,7 +43,7 @@
 	      <input class="closeBtn" id="closeBtn" type="button" value="Close" OnClick="closeHowToPlay()">
 	 </div>
   </div>
-  <div class="playArea">
+  <div class="playArea" id="playArea">
 		  <div class="boxOf16">
 			   <div class="rowOf4">
 					<div class="place" id="p1_01" OnMouseUp="placeNumber1('p1_01')">0</div>

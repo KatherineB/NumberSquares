@@ -117,60 +117,81 @@ function genRandNums(){
 		}	    		
 	}
 }
-/*function getNumber(rSquare){
-     origin = rSquare;
-     numberToTransfer = document.getElementById(rSquare).innerHTML;
-	 event.preventDefault();
-}*/
+
 nr01.onmousedown = function(e){
    origin = 'nr01';
    numberToTransfer = document.getElementById('nr01').innerHTML;
+   document.getElementById('mainDiv').style.cursor = 'move';
+   $('.place').css('cursor', 'move');
    e.preventDefault();
 }
+
 nr02.onmousedown = function(e){
    origin = 'nr02';
    numberToTransfer = document.getElementById('nr02').innerHTML;
+   document.getElementById('mainDiv').style.cursor = 'move';
+   $('.place').css('cursor', 'move');
    e.preventDefault();
 }
 nr03.onmousedown = function(e){
    origin = 'nr03';
    numberToTransfer = document.getElementById('nr03').innerHTML;
+   document.getElementById('mainDiv').style.cursor = 'move';
+   $('.place').css('cursor', 'move');
    e.preventDefault();
 }
 nr04.onmousedown = function(e){
    origin = 'nr04';
    numberToTransfer = document.getElementById('nr04').innerHTML;
+   document.getElementById('mainDiv').style.cursor = 'move';
+   $('.place').css('cursor', 'move');
    e.preventDefault();
 }
 nr05.onmousedown = function(e){
    origin = 'nr05';
    numberToTransfer = document.getElementById('nr05').innerHTML;
+   document.getElementById('mainDiv').style.cursor = 'move';
+   $('.place').css('cursor', 'move');
    e.preventDefault();
 }
 nr06.onmousedown = function(e){
    origin = 'nr06';
    numberToTransfer = document.getElementById('nr06').innerHTML;
+   document.getElementById('mainDiv').style.cursor = 'move';
+   $('.place').css('cursor', 'move');
    e.preventDefault();
 }
 nr07.onmousedown = function(e){
    origin = 'nr07';
    numberToTransfer = document.getElementById('nr07').innerHTML;
+   document.getElementById('mainDiv').style.cursor = 'move';
+   $('.place').css('cursor', 'move');
    e.preventDefault();
 }
 nr08.onmousedown = function(e){
    origin = 'nr08';
    numberToTransfer = document.getElementById('nr08').innerHTML;
+   document.getElementById('mainDiv').style.cursor = 'move';
+   $('.place').css('cursor', 'move');
    e.preventDefault();
 }
 nr09.onmousedown = function(e){
    origin = 'nr09';
    numberToTransfer = document.getElementById('nr09').innerHTML;
+   document.getElementById('mainDiv').style.cursor = 'move';
+   $('.place').css('cursor', 'move');
    e.preventDefault();
 }
 nr10.onmousedown = function(e){
    origin = 'nr10';
    numberToTransfer = document.getElementById('nr10').innerHTML;
+   document.getElementById('mainDiv').style.cursor = 'move';
+   $('.place').css('cursor', 'move');
    e.preventDefault();
+}
+mainDiv.onmouseup = function(e){
+	 document.getElementById('mainDiv').style.cursor = 'default';
+	 $('.place').css('cursor', 'default');
 }
 function placeNumber1(pSquare){
      var numberLegal = document.getElementById(pSquare).innerHTML;	 
