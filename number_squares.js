@@ -125,6 +125,7 @@ function genRandNums(){
 nr01.onmousedown = function(e){
    origin = 'nr01';
    numberToTransfer = document.getElementById('nr01').innerHTML;
+   document.getElementById('nr01').style.color = '#4b0';
    document.getElementById('mainDiv').style.cursor = 'move';
    $('.place').css('cursor', 'move');
    e.preventDefault();
@@ -133,6 +134,7 @@ nr01.onmousedown = function(e){
 nr02.onmousedown = function(e){
    origin = 'nr02';
    numberToTransfer = document.getElementById('nr02').innerHTML;
+   document.getElementById('nr02').style.color = '#4b0';
    document.getElementById('mainDiv').style.cursor = 'move';
    $('.place').css('cursor', 'move');
    e.preventDefault();
@@ -140,6 +142,7 @@ nr02.onmousedown = function(e){
 nr03.onmousedown = function(e){
    origin = 'nr03';
    numberToTransfer = document.getElementById('nr03').innerHTML;
+   document.getElementById('nr03').style.color = '#4b0';
    document.getElementById('mainDiv').style.cursor = 'move';
    $('.place').css('cursor', 'move');
    e.preventDefault();
@@ -147,6 +150,7 @@ nr03.onmousedown = function(e){
 nr04.onmousedown = function(e){
    origin = 'nr04';
    numberToTransfer = document.getElementById('nr04').innerHTML;
+   document.getElementById('nr04').style.color = '#4b0';
    document.getElementById('mainDiv').style.cursor = 'move';
    $('.place').css('cursor', 'move');
    e.preventDefault();
@@ -154,6 +158,7 @@ nr04.onmousedown = function(e){
 nr05.onmousedown = function(e){
    origin = 'nr05';
    numberToTransfer = document.getElementById('nr05').innerHTML;
+   document.getElementById('nr05').style.color = '#4b0';
    document.getElementById('mainDiv').style.cursor = 'move';
    $('.place').css('cursor', 'move');
    e.preventDefault();
@@ -161,6 +166,7 @@ nr05.onmousedown = function(e){
 nr06.onmousedown = function(e){
    origin = 'nr06';
    numberToTransfer = document.getElementById('nr06').innerHTML;
+   document.getElementById('nr06').style.color = '#4b0';
    document.getElementById('mainDiv').style.cursor = 'move';
    $('.place').css('cursor', 'move');
    e.preventDefault();
@@ -168,6 +174,7 @@ nr06.onmousedown = function(e){
 nr07.onmousedown = function(e){
    origin = 'nr07';
    numberToTransfer = document.getElementById('nr07').innerHTML;
+   document.getElementById('nr07').style.color = '#4b0';
    document.getElementById('mainDiv').style.cursor = 'move';
    $('.place').css('cursor', 'move');
    e.preventDefault();
@@ -175,6 +182,7 @@ nr07.onmousedown = function(e){
 nr08.onmousedown = function(e){
    origin = 'nr08';
    numberToTransfer = document.getElementById('nr08').innerHTML;
+   document.getElementById('nr08').style.color = '#4b0';
    document.getElementById('mainDiv').style.cursor = 'move';
    $('.place').css('cursor', 'move');
    e.preventDefault();
@@ -182,6 +190,7 @@ nr08.onmousedown = function(e){
 nr09.onmousedown = function(e){
    origin = 'nr09';
    numberToTransfer = document.getElementById('nr09').innerHTML;
+   document.getElementById('nr09').style.color = '#4b0';
    document.getElementById('mainDiv').style.cursor = 'move';
    $('.place').css('cursor', 'move');
    e.preventDefault();
@@ -189,11 +198,13 @@ nr09.onmousedown = function(e){
 nr10.onmousedown = function(e){
    origin = 'nr10';
    numberToTransfer = document.getElementById('nr10').innerHTML;
+   document.getElementById('nr10').style.color = '#4b0';
    document.getElementById('mainDiv').style.cursor = 'move';
    $('.place').css('cursor', 'move');
    e.preventDefault();
 }
 mainDiv.onmouseup = function(e){
+	 document.getElementById(origin).style.color = "#000000";
 	 document.getElementById('mainDiv').style.cursor = 'default';
 	 $('.place').css('cursor', 'default');
 }
