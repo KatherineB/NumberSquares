@@ -3,6 +3,9 @@ html{
    background-color: #dfaf7f;
    font-family: arial, verdana, tahoma;
 }
+.mainDiv{
+	height: 100%;
+}
 .mainHeading{
 	color: #668866;
 	font-size: 30px;
