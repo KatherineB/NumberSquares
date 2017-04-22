@@ -20,7 +20,10 @@ var bonusScore5 = 0;
 var totalScore = 0;
 var numberToTransfer = "";
 var origin = "";
-var randSets = 10;
+var randSetsLeft = 10;
+var NUMBER_OF_RANDS_PER_SET = 10;
+var NUMBER_OF_SMALL_SQUARES_IN_A_LARGE_SQUARE = 16;
+var UPPER_LIMIT_FOR_RANDS_CHOSEN = 16;
 function newGame(){
 	score1 = 0;
 	score2 = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
@@ -36,16 +39,17 @@ function newGame(){
 	totalScore = 0;
 	numberToTransfer = "";
 	origin = "";
-	randSets = 10;
+	randSetsLeft = 10;
+	
 	document.getElementById("noteBox").style.display = "inline-block";
 	document.getElementById("scoreBox").style.display = "none";
 	document.getElementById("noteBox").style.backgroundColor = "#668866";
 	document.getElementById("newNumbersBtn").value = "New Numbers";
-	document.getElementById("sets").innerHTML = randSets;
-	for( var i = 0; i < 10; i++){		
+	document.getElementById("sets").innerHTML = randSetsLeft;
+	for( var i = 0; i < NUMBER_OF_RANDS_PER_SET; i++){		
 			document.getElementById(ids[i]).innerHTML = "";		
 	}
-	for ( var i = 0; i < 16; i++){
+	for ( var i = 0; i < NUMBER_OF_SMALL_SQUARES_IN_A_LARGE_SQUARE; i++){
 		document.getElementById(place1[i]).style.backgroundColor = "#ffffff";
 		document.getElementById(place1[i]).style.fontWeight = "normal";
 		document.getElementById(place1[i]).style.color = "#aaaaaa";
@@ -65,56 +69,56 @@ function newGame(){
 		document.getElementById(place6[i]).style.fontWeight = "normal";
 		document.getElementById(place6[i]).style.color = "#aaaaaa";
 	}
-	for ( var i = 0; i < 16; i+=2){		
+	for ( var i = 0; i < NUMBER_OF_SMALL_SQUARES_IN_A_LARGE_SQUARE; i+=2){		
 		document.getElementById(place2[i]).innerHTML = "?";
 		document.getElementById(place2[i+1]).innerHTML = "";
 	}
-	for ( var i = 0; i < 16; i+=4){		
+	for ( var i = 0; i < NUMBER_OF_SMALL_SQUARES_IN_A_LARGE_SQUARE; i+=4){		
 		document.getElementById(place3[i]).innerHTML = "?";
 		document.getElementById(place3[i+1]).innerHTML = "";
 		document.getElementById(place3[i+2]).innerHTML = "";
 		document.getElementById(place3[i+3]).innerHTML = "";
 	}
-	for ( var i = 0; i < 16; i+=4){		
+	for ( var i = 0; i < NUMBER_OF_SMALL_SQUARES_IN_A_LARGE_SQUARE; i+=4){		
 		document.getElementById(place4[i]).innerHTML = "?";
 		document.getElementById(place4[i+1]).innerHTML = "";
 		document.getElementById(place4[i+2]).innerHTML = "";
 		document.getElementById(place4[i+3]).innerHTML = "";
 	}
-	for ( var i = 0; i < 16; i++){		
+	for ( var i = 0; i < NUMBER_OF_SMALL_SQUARES_IN_A_LARGE_SQUARE; i++){		
 		document.getElementById(place5[i]).innerHTML = "";
 	}
 	document.getElementById(place5[0]).innerHTML = "?";
 	document.getElementById(place5[8]).innerHTML = "?";
-	for ( var i = 0; i < 16; i++){		
+	for ( var i = 0; i < NUMBER_OF_SMALL_SQUARES_IN_A_LARGE_SQUARE; i++){		
 		document.getElementById(place6[i]).innerHTML = "";
 	}
 	document.getElementById(place6[0]).innerHTML = "?";
 }
 
 function genRandNums(){
-	randSets--;
-    if(randSets > -1){
-		for( var i = 0; i < 10; i++){
-			var number = Math.floor(Math.random()*16);
+	randSetsLeft--;
+    if(randSetsLeft > -1){
+		for( var i = 0; i < NUMBER_OF_RANDS_PER_SET; i++){
+			var number = Math.floor(Math.random()*UPPER_LIMIT_FOR_RANDS_CHOSEN);
 			document.getElementById(ids[i]).innerHTML = randomNumbers[number];		
 		}	
-		document.getElementById("sets").innerHTML = randSets;
+		document.getElementById("sets").innerHTML = randSetsLeft;
 		
 		/* Changes colour of notice to user when sets of random numbers are 
 		   getting close to running out */
-		if ( randSets == 2 || randSets == 3 ){
+		if ( randSetsLeft == 2 || randSetsLeft == 3 ){
 			document.getElementById("noteBox").style.backgroundColor = "#ddaa00";
 	    }
-		if ( randSets == 0 || randSets == 1 ){
+		if ( randSetsLeft == 0 || randSetsLeft == 1 ){
 			document.getElementById("noteBox").style.backgroundColor = "#ff0000";
 	    }
-		if ( randSets == 0){
+		if ( randSetsLeft == 0){
 			document.getElementById("newNumbersBtn").value = "End Game";
 		}
 	}
 	else{
-		if (randSets == -1){
+		if (randSetsLeft == -1){
 			endGame();
 		}	    		
 	}
